@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <style>
+        /* CSS Moderno e Sofisticado */
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradiente suave */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.form-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+    transform: scale(1.05); /* Efeito de zoom quando o formulário é hover */
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #2575fc; /* Cor de destaque ao focar no campo */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 48%;
+}
+
+button:hover {
+    background-color: #6a11cb; /* Cor ao passar o mouse */
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+    }
+
+    button {
+        width: 100%; /* Botões ocupando toda a largura em telas menores */
+        margin-top: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Cadastro de Usuários</h1>
+        <form id="cadastroForm" action="/cadastrar" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <div class="error" id="nomeError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+                <div class="error" id="senhaError"></div>
+            </div>
+            <div class="button-group">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
